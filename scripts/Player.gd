@@ -12,5 +12,7 @@ func _physics_process(delta):
 		velocity.y = -speed
 	if Input.is_action_pressed("down"):
 		velocity.y = speed
+	
 	move_and_slide()
-	print(velocity)
+	var screen_size = get_viewport_rect().size	
+	global_position = global_position.clamp(Vector2(0,0), screen_size)
