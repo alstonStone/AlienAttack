@@ -2,7 +2,7 @@ extends Area2D
 
 
 
-@export var speed = 8
+@export var speed = 300
 
 func _physics_process(delta):
-	global_position.x += speed
+	global_position.x += speed*delta
