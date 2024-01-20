@@ -18,3 +18,6 @@ texture = ExtResource("1_crg86")
 position = Vector2(11.6667, 1.66667)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_fqvxg")
+
+[node name="OffScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-71.6667, -1.66667)

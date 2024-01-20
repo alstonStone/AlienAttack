@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var speed = 400
 var rocket_scene = preload("res://scenes/rocket.tscn")
-@onready var rocket_container = get_node("RocketContainer")
+@onready var rocket_container = $RocketContainer
 
 
 func _process(delta):
