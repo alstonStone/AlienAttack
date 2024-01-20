@@ -54,6 +54,17 @@ shoot={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="rocket"
+
+[physics]
+
+common/physics_ticks_per_second=240
+common/max_physics_steps_per_frame=12
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
