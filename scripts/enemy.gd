@@ -5,7 +5,8 @@ extends Area2D
 @onready var offscreen_notifier = $OffScreenNotifier
 
 func _ready():
-	offscreen_notifier.connect("screen_exited",_on_screen_exited)
+	#offscreen_notifier.connect("screen_exited",_on_screen_exited)
+	pass
 
 func _physics_process(delta):
 	global_position.x -= speed*delta
