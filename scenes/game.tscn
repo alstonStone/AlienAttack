@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfbulrht5mij8"]
+[gd_scene load_steps=7 format=3 uid="uid://bfbulrht5mij8"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_nv6vq"]
 [ext_resource type="Texture2D" uid="uid://b0qmkro75f3t4" path="res://assets/textures/bg.png" id="1_snxsf"]
 [ext_resource type="PackedScene" uid="uid://dhg5gwh6lgl2k" path="res://scenes/player.tscn" id="2_2q6l6"]
+[ext_resource type="PackedScene" uid="uid://bi3o76qaboq1u" path="res://scenes/hud.tscn" id="2_krlq7"]
 [ext_resource type="PackedScene" uid="uid://drru6jpsedunq" path="res://scenes/enemy_spawner.tscn" id="4_87p1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h21k8"]
@@ -10,6 +11,10 @@ size = Vector2(36, 740)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_nv6vq")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI" instance=ExtResource("2_krlq7")]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1280.0
@@ -31,4 +36,5 @@ position = Vector2(-82, 360)
 shape = SubResource("RectangleShape2D_h21k8")
 
 [connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
+[connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]
 [connection signal="area_entered" from="EnemyKillZone" to="." method="_on_area_2d_area_entered"]

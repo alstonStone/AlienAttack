@@ -1,7 +1,9 @@
 extends Area2D
 
+signal killed
 
 @export var speed = 200
+
 @onready var offscreen_notifier = $OffScreenNotifier
 
 
@@ -18,6 +20,7 @@ func _on_screen_exited():
 	queue_free()
 
 func die():
+	emit_signal("killed")
 	queue_free()
 
 func _on_body_entered(body):
