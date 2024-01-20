@@ -1,14 +1,15 @@
 extends Node2D
 
 
-
 var enemy_scene = preload("res://scenes/enemy.tscn")
 
 @onready var spawn_positions = $SpawnPostitions
 
+
+
+
 func _on_timer_timeout():
 	spawn_enemy()
-
 
 func spawn_enemy():
 	var spawn_positions_array = spawn_positions.get_children()
